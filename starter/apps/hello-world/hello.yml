@@ -25,7 +25,7 @@ spec:
           livenessProbe:
             httpGet:
               port: 9000
-              path: /
+              path: /  #This path was /nginx_status which was invalid and returned a 500 error
             initialDelaySeconds: 2
             periodSeconds: 2
       nodeSelector:
