@@ -35,7 +35,7 @@ spec:
             httpGet:
               port: 9000
               path: /nginx_status
-            initialDelaySeconds: 2
+            initialDelaySeconds: 20
             periodSeconds: 2
       nodeSelector:
         kubernetes.io/os: linux
