@@ -34,8 +34,9 @@ spec:
           livenessProbe:
             httpGet:
               port: 9000
-              path: /nginx_status
-            initialDelaySeconds: 60
+#              path: /nginx_status
+              path:/
+            initialDelaySeconds: 2
             periodSeconds: 2
       nodeSelector:
         kubernetes.io/os: linux
