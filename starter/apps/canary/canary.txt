@@ -1,0 +1,49 @@
+[cloudshell-user@ip-10-0-35-237 canary]$ kubectl get svc
+NAME            TYPE           CLUSTER-IP       EXTERNAL-IP                                                                     PORT(S)        AGE
+blue-svc        LoadBalancer   172.20.38.151    af476710df5fa4a34809996e20686b9a-6b36133da609dead.elb.us-east-2.amazonaws.com   80:31531/TCP   11h
+canary-svc      ClusterIP      172.20.121.89    <none>                                                                          80/TCP         11m
+hello-world     LoadBalancer   172.20.164.229   ab993ee155eed464b86fc3dcad85d50f-cd23f3da542bdd97.elb.us-east-2.amazonaws.com   80:31681/TCP   6h32m
+kube-ops-view   LoadBalancer   172.20.131.66    a3495543062784cbfba13966fafdecc1-515519850.us-east-2.elb.amazonaws.com          80:31496/TCP   10h
+[cloudshell-user@ip-10-0-35-237 canary]$ kubectl run debug --rm -i --tty --image nicolaka/netshoot -- /bin/bash
+If you don't see a command prompt, try pressing enter.
+bash-5.1# curl 172.20.121.89
+<html>
+<h1>This is version 1</h1>
+</html>
+bash-5.1# curl 172.20.121.89
+<html>
+<h1>This is version 1</h1>
+</html>
+bash-5.1# curl 172.20.121.89
+<html>
+<h1>This is version 1</h1>
+</html>
+bash-5.1# curl 172.20.121.89
+<html>
+<h1>This is version 2</h1>
+</html>
+bash-5.1# curl 172.20.121.89
+<html>
+<h1>This is version 2</h1>
+</html>
+bash-5.1# curl 172.20.121.89
+<html>
+<h1>This is version 2</h1>
+</html>
+bash-5.1# curl 172.20.121.89
+<html>
+<h1>This is version 1</h1>
+</html>
+bash-5.1# curl 172.20.121.89
+<html>
+<h1>This is version 2</h1>
+</html>
+bash-5.1# curl 172.20.121.89
+<html>
+<h1>This is version 1</h1>
+</html>
+bash-5.1# curl 172.20.121.89
+<html>
+<h1>This is version 1</h1>
+</html>
+bash-5.1# 
