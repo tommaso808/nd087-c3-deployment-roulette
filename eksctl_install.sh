@@ -2,6 +2,7 @@
 
 #aws eks --region us-east-2 update-kubeconfig --name udacity-cluster
 #kubectl config use-context <cluster_name>
+#kubectl config view | grep '\- name'| awk '{  print $3 }'
 #arn:aws:eks:us-east-2:139802095464:cluster/udacity-cluster
 #kubectl create namespace udacity
 
