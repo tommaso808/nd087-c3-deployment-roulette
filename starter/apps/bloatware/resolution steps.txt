@@ -1,0 +1,9 @@
+Troubleshooting
+- The bloaty application would not fully deploy.  Many pods were in a pending state
+- Described a pod a pending state and saw there were not enough pods available
+- After implementing an autoscaler, the cluster did not scale
+
+
+Resolution steps
+- Implemented autoscaler service 
+- Increased the maximum number of nodes in the cluster from 2 - 3
