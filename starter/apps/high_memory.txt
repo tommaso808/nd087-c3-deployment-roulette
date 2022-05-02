@@ -1,0 +1,4 @@
+The pod with consuming the highest memory is this instance of hello-world
+
+NAME                                  CPU(cores)   MEMORY(bytes)              
+hello-world-698dfc7f8-vbl5j           2m           19Mi       
